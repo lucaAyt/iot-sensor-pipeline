@@ -141,20 +141,5 @@ void loop() {
     char payload[50];
     sprintf(payload, "{\"temperature\":%.2f,\"humidity\":%.2f}", temperature, humidity);
     Serial.println(payload);
-    
-    // Publish an MQTT message on topic esp32/dht/temperature
-    uint16_t packetIdPub = mqttClient.publish(MQTT_PUB_DHT11_HOME, 1, true, payload);                            
-    Serial.printf("Publishing on topic %s at QoS 1, packetId: %i ", MQTT_PUB_DHT11_HOME, packetIdPub);
-    Serial.printf("Message: %s \n", payload);
-    
-    // // Publish an MQTT message on topic esp32/dht/temperature
-    // uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_TEMP, 1, true, String(temperature).c_str());                            
-    // Serial.printf("Publishing on topic %s at QoS 1, packetId: %i", MQTT_PUB_TEMP, packetIdPub1);
-    // Serial.printf("Message: %.2f \n", temperature);
-
-    // // Publish an MQTT message on topic esp32/dht/humidity
-    // uint16_t packetIdPub2 = mqttClient.publish(MQTT_PUB_HUM, 1, true, String(humidity).c_str());                            
-    // Serial.printf("Publishing on topic %s at QoS 1, packetId %i: ", MQTT_PUB_HUM, packetIdPub2);
-    // Serial.printf("Message: %.2f \n", humidity);
   }
 }
