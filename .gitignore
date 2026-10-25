@@ -1,0 +1,19 @@
+# Secrets
+.env
+mosquitto/config/pwfile
+firmware/**/secrets.h
+
+# Mosquitto runtime data (keep folders via .gitkeep)
+mosquitto/data/*
+!mosquitto/data/.gitkeep
+mosquitto/log/*
+!mosquitto/log/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Editor / OS clutter
+.vscode/
+.DS_Store
